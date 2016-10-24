@@ -28,4 +28,15 @@ class RootViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
+    
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.navigationItem.backBarButtonItem?.title = ""
+        //        let nav = segue.destination as! UINavigationController
+        //        let destinationVc = nav.topViewController as! SignInViewController
+        //
+        //        let backItem = UIBarButtonItem()
+        //        backItem.title = "Something Else"
+        //        navigationItem.backBarButtonItem = backItem
+    }
 }

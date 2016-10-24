@@ -34,7 +34,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Hra-eJ-B7W"/>
+                    <navigationItem key="navigationItem" id="Hra-eJ-B7W">
+                        <barButtonItem key="backBarButtonItem" title="  " id="3Zq-s8-A3V"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1236"/>
                     <connections>
@@ -62,7 +64,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQd-jk-JrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.5" y="154.5"/>
+            <point key="canvasLocation" x="86" y="104"/>
         </scene>
         <!--Sign In to Dropbox-->
         <scene sceneID="aRY-Cz-VsH">
@@ -116,7 +118,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sign In to Dropbox" id="Kw9-ZQ-xTX"/>
+                    <navigationItem key="navigationItem" title="Sign In to Dropbox" id="Kw9-ZQ-xTX">
+                        <barButtonItem key="backBarButtonItem" title="  " id="wIH-HA-gIO"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="passwordTextField" destination="mgW-ve-fbU" id="HpF-1d-iz0"/>
                         <outlet property="signInButtonsView" destination="dAx-gW-lfS" id="7pP-hT-xVZ"/>
@@ -169,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i96-ir-Y9x" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879" y="702"/>
+            <point key="canvasLocation" x="1904" y="653"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="8kH-dD-n7K">
@@ -199,7 +203,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fPl-Rv-gwm"/>
+                    <navigationItem key="navigationItem" id="fPl-Rv-gwm">
+                        <barButtonItem key="backBarButtonItem" title="  " id="x2S-f3-8Xq"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="720"/>
                     <connections>
@@ -209,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWB-HW-gvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2323" y="231"/>
+            <point key="canvasLocation" x="2318" y="180"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="KaB-G4-Dg0">
@@ -246,7 +252,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5Rf-Ze-6up"/>
+                    <navigationItem key="navigationItem" id="5Rf-Ze-6up">
+                        <barButtonItem key="backBarButtonItem" title="  " id="1Jm-Yx-V2i"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="takeCarouselButtonsForASpinView" destination="8gg-vY-FmJ" id="OWa-xd-KTC"/>
                     </connections>
@@ -264,9 +272,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="conversations" id="8wS-47-P3t">
-                                <frame key="frameInset" minY="64" width="320" height="568"/>
+                                <frame key="frameInset" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hbq-Xr-kRq">
+                                <frame key="frameInset" minX="10" minY="25" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="GNp-Vc-lXj" kind="push" id="7QB-wO-kFS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -274,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeM-db-Wdo" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="703"/>
+            <point key="canvasLocation" x="2735" y="652"/>
         </scene>
     </scenes>
     <resources>
@@ -290,9 +305,10 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="J4a-87-Bn2"/>
+        <segue reference="7QB-wO-kFS"/>
     </inferredMetricsTieBreakers>
 </document>

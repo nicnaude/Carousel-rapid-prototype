@@ -15,10 +15,16 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
     }
     
-    @IBAction func onSignUpButtonTapped(_ sender: AnyObject) {
+    override func viewDidLayoutSubviews() {
+        self.navigationController?.isNavigationBarHidden = false
+        
+        
+    }
     
+    
+    @IBAction func onSignUpButtonTapped(_ sender: AnyObject) {
+        
     }
 } // The end
