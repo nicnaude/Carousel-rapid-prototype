@@ -113,21 +113,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="97g-RP-SLe" appends="YES" id="gGo-6k-3IF"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In to Dropbox" id="Kw9-ZQ-xTX">
                         <barButtonItem key="backBarButtonItem" title="  " id="wIH-HA-gIO"/>
                     </navigationItem>
                     <connections>
                         <outlet property="passwordTextField" destination="mgW-ve-fbU" id="HpF-1d-iz0"/>
-                        <outlet property="signInButtonsView" destination="dAx-gW-lfS" id="7pP-hT-xVZ"/>
+                        <outlet property="signInButtonsView" destination="dAx-gW-lfS" id="UbL-xz-qBf"/>
                         <outlet property="usernameTextField" destination="xh4-oH-EeB" id="LJZ-85-0Z5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj0-uN-TeM" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="97g-RP-SLe">
+                    <connections>
+                        <action selector="didTapMainView:" destination="E56-NK-E0w" id="UdK-pC-hV8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="992" y="438"/>
         </scene>

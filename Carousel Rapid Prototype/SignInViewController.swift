@@ -13,8 +13,25 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButtonsView: UIView!
     
+    var originalSignInButtonsCenter: CGPoint!
+    var offSetSignInButtonsCenter: CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        originalSignInButtonsCenter = signInButtonsView.center
+        offSetSignInButtonsCenter = CGPoint(x: originalSignInButtonsCenter.x, y: originalSignInButtonsCenter.y - 45)
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: OperationQueue.main) {(Notification) in
+            print("Keyboard was  shown?")
+            self.signInButtonsView.center = self.offSetSignInButtonsCenter
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: OperationQueue.main) {(Notification) in
+            print("Keyboard was shown?")
+            self.signInButtonsView.center = self.originalSignInButtonsCenter
+        }
+    }
+    
+    @IBAction func didTapMainView(_ sender: AnyObject) {
+        view.endEditing(true)
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,15 +59,14 @@ class SignInViewController: UIViewController {
             alertController.addAction(OKAction)
             self.present(alertController, animated: true, completion:nil)
         } else if usernameTextField.text == "tim@thecodepath.com" && passwordTextField.text == "12345" {
-            let alertController = UIAlertController(title: "Signing in", message: "One moment while we sign you in", preferredStyle: .alert)
-            
-            let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-                print("You've pressed OK button");
-            }
-            performSegue(withIdentifier: "segueToWelcome", sender: nil)
-            
-            alertController.addAction(OKAction)
+            let alertController = UIAlertController(title: "Signing in...", message: "", preferredStyle: .alert)
             self.present(alertController, animated: true, completion:nil)
+            
+            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.performSegue(withIdentifier: "segueToWelcome", sender: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
 } // The end
