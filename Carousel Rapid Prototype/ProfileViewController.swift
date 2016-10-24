@@ -16,8 +16,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSize(width: 375, height: 1100)
-        
+        scrollView.contentSize = CGSize(width: 320, height: profileImageView.image!.size.height + 300)
+    }
+    
+    override func viewDidLayoutSubviews() {
         self.navigationController?.isNavigationBarHidden = false
+    }
+    @IBAction func onXtapped(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
 }

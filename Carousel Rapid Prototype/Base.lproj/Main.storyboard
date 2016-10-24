@@ -29,6 +29,30 @@
                                             <segue destination="E56-NK-E0w" kind="push" id="EIO-EG-PDs"/>
                                         </connections>
                                     </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="intro_tile1" id="Ckg-Cj-DzX">
+                                        <rect key="frame" x="47" y="745" width="153" height="152"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="intro_tile2" id="BUW-N4-8km">
+                                        <rect key="frame" x="201" y="745" width="76" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="intro_tile3" id="Ayb-N7-gKX">
+                                        <rect key="frame" x="201" y="821" width="76" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="intro_tile5" id="HTe-Dm-Skc">
+                                        <rect key="frame" x="202" y="900" width="76" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="intro_tile6" id="6wt-xT-FhK">
+                                        <rect key="frame" x="124" y="900" width="76" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="intro_tile4" id="RlW-Kv-Bby">
+                                        <rect key="frame" x="47" y="899" width="76" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -40,6 +64,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1236"/>
                     <connections>
+                        <outlet property="image1" destination="Ckg-Cj-DzX" id="WHA-lK-iCT"/>
+                        <outlet property="image2" destination="BUW-N4-8km" id="OVx-SU-1B0"/>
+                        <outlet property="image3" destination="Ayb-N7-gKX" id="XQC-2y-b1Z"/>
+                        <outlet property="image4" destination="RlW-Kv-Bby" id="SS0-wm-Sdc"/>
+                        <outlet property="image5" destination="6wt-xT-FhK" id="Pms-Vl-fMW"/>
+                        <outlet property="image6" destination="HTe-Dm-Skc" id="577-9V-w0Y"/>
                         <outlet property="scrollView" destination="GVQ-rW-4jZ" id="iQ7-sC-Bpz"/>
                         <outlet property="scrollViewImage" destination="Dfc-uF-67V" id="3Or-zZ-zLW"/>
                     </connections>
@@ -216,24 +246,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="oiD-0h-aAk">
-                                <frame key="frameInset" width="320" height="720"/>
+                                <frame key="frameInset" minY="69" width="320" height="651"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="settings" id="C8E-8w-98t">
-                                        <rect key="frame" x="0.0" y="12" width="320" height="695"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="settings" id="C8E-8w-98t">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="695"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BY4-V3-b7l">
-                                        <rect key="frame" x="0.0" y="631" width="320" height="53"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7G4-2U-bSG">
+                                        <rect key="frame" x="0.0" y="613" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="push" id="J4a-87-Bn2"/>
+                                            <segue destination="XQe-O0-Zcn" kind="modal" id="72k-eN-PN0"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BY4-V3-b7l">
+                                <frame key="frameInset" minY="20" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" id="a3b-bR-u1f">
+                                <frame key="frameInset" minY="25" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Settings" id="f5M-CX-8j2">
+                                        <barButtonItem key="leftBarButtonItem" title="X" id="7ka-4H-WK1">
+                                            <connections>
+                                                <action selector="onXtapped:" destination="B0f-Pk-Jwi" id="U4Z-Gf-Bvp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95259064435958862" green="0.96065527200698853" blue="0.97300392389297485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="fPl-Rv-gwm">
                         <barButtonItem key="backBarButtonItem" title="  " id="x2S-f3-8Xq"/>
@@ -261,6 +308,24 @@
                                 <frame key="frameInset" minY="20" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" id="Sk5-7j-wyc">
+                                <frame key="frameInset" minX="16" minY="420" width="288" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="backup_button" id="sEE-Ya-omY">
+                                        <frame key="frameInset" minX="-16" minY="16" width="320" height="97"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8cr-Ft-JTa">
+                                        <frame key="frameInset" minX="8" minY="57" width="272" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="GNp-Vc-lXj" kind="push" id="2MB-3s-ytT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -268,6 +333,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="1Jm-Yx-V2i"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonsView" destination="Sk5-7j-wyc" id="B5Z-14-5l6"/>
                         <outlet property="contentImageView" destination="yaD-m6-qoK" id="FCX-7G-mMr"/>
                     </connections>
                 </viewController>
@@ -305,9 +371,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backup_button" width="320" height="97"/>
         <image name="conversations" width="320" height="568"/>
         <image name="feed" width="320" height="1564"/>
         <image name="intro" width="320" height="1136"/>
+        <image name="intro_tile1" width="153" height="152"/>
+        <image name="intro_tile2" width="76" height="75"/>
+        <image name="intro_tile3" width="76" height="76"/>
+        <image name="intro_tile4" width="76" height="76"/>
+        <image name="intro_tile5" width="76" height="75"/>
+        <image name="intro_tile6" width="76" height="75"/>
         <image name="login_form" width="320" height="113"/>
         <image name="login_text" width="320" height="70"/>
         <image name="settings" width="320" height="695"/>
@@ -319,6 +392,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="J4a-87-Bn2"/>
+        <segue reference="2MB-3s-ytT"/>
     </inferredMetricsTieBreakers>
 </document>

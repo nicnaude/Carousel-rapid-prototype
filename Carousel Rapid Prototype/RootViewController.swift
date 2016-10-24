@@ -12,6 +12,12 @@ class RootViewController: UIViewController {
     
     @IBOutlet weak var scrollViewImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var image4: UIImageView!
+    @IBOutlet weak var image5: UIImageView!
+    @IBOutlet weak var image6: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
