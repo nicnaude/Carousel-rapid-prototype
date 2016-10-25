@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var scrollViewImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -18,14 +18,19 @@ class RootViewController: UIViewController {
     @IBOutlet weak var image4: UIImageView!
     @IBOutlet weak var image5: UIImageView!
     @IBOutlet weak var image6: UIImageView!
+    @IBOutlet var swipeGestureRecogniser: UISwipeGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.scrollView.contentSize = scrollViewImage.frame.size
-        scrollView.contentSize = CGSize(width: 320, height: scrollViewImage.image!.size.height + 600)
+        scrollView.contentSize = CGSize(width: 320, height: scrollViewImage.image!.size.height + 800)
         
         self.navigationController?.isNavigationBarHidden = true
+        
+        swipeGestureRecogniser = UISwipeGestureRecognizer(target: self, action:#selector(UIScrollViewDelegate.scrollViewDidScroll(_:)))
+        swipeGestureRecogniser.delegate = self
+        view.addGestureRecognizer(swipeGestureRecogniser)
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
@@ -35,14 +40,18 @@ class RootViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    @IBAction func scrollViewDidScroll(_ sender: AnyObject) {
+        print("scrolled")
+        if scrollView.contentOffset.y >= 75.0 {
+            
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        print("Scroll finished")
+    }
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.navigationItem.backBarButtonItem?.title = ""
-        //        let nav = segue.destination as! UINavigationController
-        //        let destinationVc = nav.topViewController as! SignInViewController
-        //
-        //        let backItem = UIBarButtonItem()
-        //        backItem.title = "Something Else"
-        //        navigationItem.backBarButtonItem = backItem
     }
-}
+}// the end

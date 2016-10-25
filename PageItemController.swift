@@ -31,12 +31,14 @@ class PageItemController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentImageView!.image = UIImage(named: imageName)
-        buttonsView.isHidden = true
+        buttonsView.alpha = 0.0
         
         if itemIndex == 3 {
-            contentImageView!.image = UIImage(named: imageName)
-            buttonsView.isHidden = false
+            UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                self.buttonsView.isHidden = false
+                self.buttonsView.alpha = 1.0
+                self.contentImageView!.image = UIImage(named: self.imageName)
+                }, completion: nil)
         }
-        print(itemIndex)
     }
 }

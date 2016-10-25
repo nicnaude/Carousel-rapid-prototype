@@ -19,4 +19,10 @@ class PhotosViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = false
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let backItem = UIBarButtonItem()
+            backItem.title = ""
+            navigationItem.backBarButtonItem = backItem
+    }
 }

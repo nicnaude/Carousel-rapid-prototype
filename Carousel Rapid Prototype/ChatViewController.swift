@@ -14,6 +14,6 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
 }

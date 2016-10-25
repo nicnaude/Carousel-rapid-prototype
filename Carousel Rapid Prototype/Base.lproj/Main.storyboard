@@ -15,12 +15,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="GVQ-rW-4jZ">
-                                <frame key="frameInset" width="320" height="1136"/>
+                                <frame key="frameInset" width="320" height="1236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="intro" id="Dfc-uF-67V">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5x9-Mb-QUB">
                                         <rect key="frame" x="21" y="1064" width="279" height="51"/>
@@ -53,6 +54,13 @@
                                         <rect key="frame" x="47" y="899" width="76" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Swipe to continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LVu-0c-gH5">
+                                        <rect key="frame" x="92" y="312" width="137" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.48187154517076403" green="0.49335114047202355" blue="0.51414753061065976" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" red="0.60739445690000005" green="0.61932241919999997" blue="0.64005964989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -72,11 +80,18 @@
                         <outlet property="image6" destination="HTe-Dm-Skc" id="577-9V-w0Y"/>
                         <outlet property="scrollView" destination="GVQ-rW-4jZ" id="iQ7-sC-Bpz"/>
                         <outlet property="scrollViewImage" destination="Dfc-uF-67V" id="3Or-zZ-zLW"/>
+                        <outlet property="swipeGestureRecogniser" destination="iC1-jE-eiN" id="VUK-Rf-aif"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="iC1-jE-eiN">
+                    <connections>
+                        <action selector="scrollViewDidScroll:" destination="BYZ-38-t0r" id="107-V1-fez"/>
+                        <outlet property="delegate" destination="GVQ-rW-4jZ" id="6jg-7u-ey4"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="536" y="439"/>
+            <point key="canvasLocation" x="597" y="488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gSH-p6-sax">
@@ -94,7 +109,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQd-jk-JrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="104"/>
+            <point key="canvasLocation" x="151" y="154"/>
         </scene>
         <!--Sign In to Dropbox-->
         <scene sceneID="aRY-Cz-VsH">
@@ -131,14 +146,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="xh4-oH-EeB">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" id="xh4-oH-EeB">
                                 <frame key="frameInset" minX="21" minY="163" width="283" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="mgW-ve-fbU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" id="mgW-ve-fbU">
                                 <frame key="frameInset" minX="21" minY="208" width="283" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -168,22 +183,24 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="992" y="438"/>
+            <point key="canvasLocation" x="1030" y="488"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="w7l-ac-eAL">
             <objects>
                 <viewController id="xlg-HL-38M" customClass="OnboardingViewController" customModule="Carousel_Rapid_Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wS7-oe-3xY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1236"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="JNk-TW-2qV"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="320"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08M-SS-eQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="-823"/>
+            <point key="canvasLocation" x="1464" y="-392"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="QCc-ap-LPV">
@@ -222,7 +239,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Chat" id="a51-6r-llB">
                             <connections>
-                                <segue destination="c9Y-MN-LOc" kind="push" id="Npk-6E-CEU"/>
+                                <segue destination="c9Y-MN-LOc" kind="push" identifier="chatSegue" id="Npk-6E-CEU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -235,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i96-ir-Y9x" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1904" y="653"/>
+            <point key="canvasLocation" x="1901" y="702"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="8kH-dD-n7K">
@@ -294,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWB-HW-gvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2318" y="180"/>
+            <point key="canvasLocation" x="2319" y="230"/>
         </scene>
         <!--Page Item Controller-->
         <scene sceneID="KaB-G4-Dg0">
@@ -341,7 +358,7 @@
             </objects>
             <point key="canvasLocation" x="1464" y="802"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Conversations-->
         <scene sceneID="oRg-jz-uSP">
             <objects>
                 <viewController id="c9Y-MN-LOc" customClass="ChatViewController" customModule="Carousel_Rapid_Prototype" customModuleProvider="target" sceneMemberID="viewController">
@@ -353,21 +370,16 @@
                                 <frame key="frameInset" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hbq-Xr-kRq">
-                                <frame key="frameInset" minX="10" minY="25" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="GNp-Vc-lXj" kind="push" id="7QB-wO-kFS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dqX-49-5yT"/>
+                    <navigationItem key="navigationItem" title="Conversations" id="dqX-49-5yT">
+                        <barButtonItem key="backBarButtonItem" title="  " id="Wkh-bH-5sp"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeM-db-Wdo" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2735" y="652"/>
+            <point key="canvasLocation" x="2740" y="702"/>
         </scene>
     </scenes>
     <resources>
@@ -391,7 +403,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_0.fullscreen"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="2MB-3s-ytT"/>
-    </inferredMetricsTieBreakers>
 </document>

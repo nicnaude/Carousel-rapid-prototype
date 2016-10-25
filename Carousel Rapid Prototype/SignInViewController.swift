@@ -20,6 +20,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         originalSignInButtonsCenter = signInButtonsView.center
         offSetSignInButtonsCenter = CGPoint(x: originalSignInButtonsCenter.x, y: originalSignInButtonsCenter.y - 45)
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillShow, object: nil, queue: OperationQueue.main) {(Notification) in
             print("Keyboard was  shown?")
             self.signInButtonsView.center = self.offSetSignInButtonsCenter
@@ -40,8 +41,8 @@ class SignInViewController: UIViewController {
     
     
     @IBAction func onSignUpButtonTapped(_ sender: AnyObject) {
-        if usernameTextField.text != "tim@thecodepath.com" && passwordTextField.text != "12345" {
-            let alertController = UIAlertController(title: "Wah wah", message: "Nice try. Password incorrect.", preferredStyle: .alert)
+        if usernameTextField.text != "tim" && passwordTextField.text != "12345" {
+            let alertController = UIAlertController(title: "Incorrect login details", message: "Nice try. Password incorrect.", preferredStyle: .alert)
             
             let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
                 print("You've pressed OK button");
@@ -58,7 +59,7 @@ class SignInViewController: UIViewController {
             
             alertController.addAction(OKAction)
             self.present(alertController, animated: true, completion:nil)
-        } else if usernameTextField.text == "tim@thecodepath.com" && passwordTextField.text == "12345" {
+        } else if usernameTextField.text == "tim" && passwordTextField.text == "12345" {
             let alertController = UIAlertController(title: "Signing in...", message: "", preferredStyle: .alert)
             self.present(alertController, animated: true, completion:nil)
             
