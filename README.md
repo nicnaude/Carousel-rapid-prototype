@@ -12,11 +12,13 @@ password: 12345
 
 Time spent: **12 hours**
 
+
 ###Required prototype Features
 - [x] Users can swipe up to reveal the Sign In to My Dropbox buttons.
 - [x] The resulting sign in form fades into view.
 - [x] The Sign In button moves up to avoid being obscured by the keyboard.
 - [x] Live textfields will evaluate login credentials. 
+- [x] Tapping anywhere on the sign in screen will dismiss the keyboard.
 - [x] The sign in process is simulated using a minor delay on the animation.
 - [x] Users can swipe through four welcome screens to learn more about the app.
 - [x] A "Take Carousel for a Spin" button fades into view when the user reaches the fourth welcome screen. 
@@ -24,8 +26,6 @@ Time spent: **12 hours**
 - [x] Users can view a simulation of the profile screen and sign out to return to the root view controller.
 - [x] The chat welcome screen is simulated for the user.
 
-#### Optional
-- [x] Tapping anywhere on the sign in screen will dismiss the keyboard.
 
 ### Video Walkthrough 
 
@@ -34,6 +34,7 @@ Here's a walkthrough of implemented user stories:
 <img src='User flow.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 
 ## Notes
 **Challenges encountered during the creation of this prototype:** 

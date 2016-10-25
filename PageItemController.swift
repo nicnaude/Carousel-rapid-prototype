@@ -34,7 +34,7 @@ class PageItemController: UIViewController {
         buttonsView.alpha = 0.0
         
         if itemIndex == 3 {
-            UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            UIView.animate(withDuration: 2.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.buttonsView.isHidden = false
                 self.buttonsView.alpha = 1.0
                 self.contentImageView!.image = UIImage(named: self.imageName)
