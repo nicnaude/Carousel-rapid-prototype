@@ -15,6 +15,7 @@ Time spent: **12 hours**
 ###Required prototype Features
 - [x] Users can swipe up to reveal the Sign In to My Dropbox buttons.
 - [x] The resulting sign in form fades into view.
+- [x] The Sign In button moves up to avoid being obscured by the keyboard.
 - [x] Live textfields will evaluate login credentials. 
 - [x] The sign in process is simulated using a minor delay on the animation.
 - [x] Users can swipe through four welcome screens to learn more about the app.
