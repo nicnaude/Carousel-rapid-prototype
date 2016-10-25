@@ -12,6 +12,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButtonsView: UIView!
+    @IBOutlet weak var formView: UIView!
     
     var originalSignInButtonsCenter: CGPoint!
     var offSetSignInButtonsCenter: CGPoint!
@@ -29,6 +30,16 @@ class SignInViewController: UIViewController {
             print("Keyboard was shown?")
             self.signInButtonsView.center = self.originalSignInButtonsCenter
         }
+        //
+        formView.alpha = 0.0
+        
+        UIView.animate(withDuration: 1.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.formView.alpha = 1.0
+            }, completion: nil)
+        
+        //
+        
+        
     }
     
     @IBAction func didTapMainView(_ sender: AnyObject) {
